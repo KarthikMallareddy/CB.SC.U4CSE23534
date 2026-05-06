@@ -11,10 +11,15 @@ The full architectural design, including Stage 1-7 design decisions, schema, and
 - **Middleware (NPM Package)**: Located in `/logging_middleware`. A reusable telemetry layer for the evaluation service.
 
 ## 2. Evidence of Functionality
-Screenshots are located in the `submission/screenshots/` folder:
-- `main_notifications.png`: The main dashboard view.
-- `priority_filters.png`: View demonstrating limit and type filtering.
-- `api_response.png`: Raw JSON response from the proxy backend.
+
+### Notifications Dashboard
+![Main Dashboard](./submission/screenshots/main_notifications.png)
+
+### Priority Filtering & Limits
+![Priority Filters](./submission/screenshots/priority_filters.png)
+
+### Backend API Response
+![API Response](./submission/screenshots/api_response.png)
 
 ## 3. How to Run for Evaluation
 
