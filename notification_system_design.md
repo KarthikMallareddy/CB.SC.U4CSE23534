@@ -62,3 +62,11 @@ CREATE INDEX idx_notifications_user_read ON notifications(user_id, is_read);
 ## Stage 5: Reliability and Redesign (Event-Driven)
 
 ### Architecture
+- Use a Message Broker (e.g., **RabbitMQ** or **Kafka**).
+- Producers: Services (Placement, Exam, Event).
+- Consumers: Notification Service.
+- **Retry Logic**: Exponential backoff for failed delivery to the notification service.
+
+---
+
+## Stage 6: External Evaluation Service API Contract
