@@ -52,3 +52,13 @@ CREATE INDEX idx_notifications_user_read ON notifications(user_id, is_read);
 
 ## Stage 4: Performance Improvement Strategy (Caching)
 
+### Strategy
+- Use **Redis** to cache the count of unread notifications per user.
+- Cache the latest 20 notifications for frequent access.
+- Invalidate cache on new notification arrival or status change.
+
+---
+
+## Stage 5: Reliability and Redesign (Event-Driven)
+
+### Architecture
