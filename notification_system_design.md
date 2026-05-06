@@ -43,3 +43,12 @@ CREATE INDEX idx_notifications_user_read ON notifications(user_id, is_read);
 ### Analysis
 - High volume of `is_read=false` queries.
 - Pagination is essential to avoid large payloads.
+
+### Optimization
+- Composite index on `(user_id, is_read, created_at DESC)`.
+- Use `LIMIT` and `OFFSET` for pagination.
+
+---
+
+## Stage 4: Performance Improvement Strategy (Caching)
+
