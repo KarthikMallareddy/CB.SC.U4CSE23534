@@ -31,3 +31,15 @@ CREATE TABLE notifications (
     type VARCHAR(50) NOT NULL,
     message TEXT NOT NULL,
     is_read BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+CREATE INDEX idx_notifications_user_read ON notifications(user_id, is_read);
+```
+
+---
+
+## Stage 3: Query Analysis and Performance Optimization
+
+### Analysis
+- High volume of `is_read=false` queries.
+- Pagination is essential to avoid large payloads.
