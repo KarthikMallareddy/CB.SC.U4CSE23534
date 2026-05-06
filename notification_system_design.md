@@ -15,3 +15,19 @@
 - **Choice**: Server-Sent Events (SSE).
 - **Rationale**: Notifications are unidirectional (Server -> Client). SSE is lighter than WebSockets and handles reconnection automatically.
 
+---
+
+## Stage 2: Persistent Storage Choice and Schema Design
+
+### Database Choice
+- **Choice**: PostgreSQL.
+- **Rationale**: Relational data, strong consistency, and support for JSONB if needed.
+
+### Schema
+```sql
+CREATE TABLE notifications (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    user_id UUID NOT NULL,
+    type VARCHAR(50) NOT NULL,
+    message TEXT NOT NULL,
+    is_read BOOLEAN DEFAULT FALSE,
