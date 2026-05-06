@@ -1,7 +1,29 @@
-node_modules/
-.env
+# Dependencies
+**/node_modules/
+**/dist/
+**/.next/
+**/build/
+**/out/
 
-# OS-specific files
+# Environment
+**/.env
+**/.env.*
+!.env.example
+
+# OS files
 .DS_Store
 Thumbs.db
 Desktop.ini
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Project specific
+submission/screenshots/extra_screenshots/
+auth_payload.json
+rebuild_history.py
+design_full.md
+design_stage.md
