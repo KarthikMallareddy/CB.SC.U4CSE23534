@@ -70,3 +70,12 @@ CREATE INDEX idx_notifications_user_read ON notifications(user_id, is_read);
 ---
 
 ## Stage 6: External Evaluation Service API Contract
+
+### Integration
+- Auth: Bearer Token via `/auth` endpoint.
+- Fetch: `GET /notifications` with `limit` and `page`.
+- **Constraint**: `limit` must be between 5 and 10.
+
+---
+
+## Stage 7: Full-Stack Frontend Architecture and Proxy Design
